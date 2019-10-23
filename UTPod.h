@@ -128,12 +128,12 @@ class UtPod
       /* FUNCTION - int getRemainingMemory
        *  returns the amount of memory available for adding new songs
 
-         input parms -
+         input parms - SongNode *songs
 
          output parms -
       */
 
-      int getRemainingMemory();
+      int getRemainingMemory(SongNode *songs);
 
 
       ~UtPod();
