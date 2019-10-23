@@ -1,4 +1,5 @@
-//DOCUMENT HERE
+//Amit Verma and Chris Bowling 
+//UTPOD Project
 
 #ifndef UTPOD_H
 #define UTPOD_H
