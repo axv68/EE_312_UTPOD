@@ -12,6 +12,8 @@ Song::Song()
 
 Song::Song(string artist) {
     this->artist = artist; 
+    songName = ""; 
+    size = 42; 
 }
 
 Song::Song(string artist, string songName, int size) {
