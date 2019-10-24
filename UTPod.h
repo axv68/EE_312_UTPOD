@@ -133,7 +133,7 @@ class UtPod
          output parms -
       */
 
-      int getRemainingMemory(SongNode *songs);
+      int getRemainingMemory();
 
 
       ~UtPod();

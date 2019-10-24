@@ -44,11 +44,15 @@ void UtPod::sortSongList(){
 }
 
 void UtPod::clearMemory(){ 
-    //Free all Song nodes; 
-
+    SongNode *p = songs;  
+    while (songs != 0){ 
+        p = songs; 
+        songs = songs->next; 
+        free(p); 
+    }
 }
 
-int UtPod::getRemainingMemory(SongNode *songs){  //Amit Changed the input parameter for this function
+int UtPod::getRemainingMemory(){  //Amit Changed the input parameter for this function
     int currentTotal = 0; 
     while (songs != NULL){ 
         currentTotal = currentTotal + songs->s.getSize; 
