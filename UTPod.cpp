@@ -23,7 +23,7 @@ int UtPod::addSong(Song const &s){
 
     //If 0 then.....
     //dynamically allocate memory for a new song and add it to the end of a linked list
-
+    return 0; 
 }
 
 int UtPod::removeSong(Song const &s){ 
@@ -32,6 +32,7 @@ int UtPod::removeSong(Song const &s){
         // delete first instance
         //return 0 for success
     //Else return -2, which means that no song was removed
+    return 0; 
 }
 
 void UtPod::shuffle(){ 
@@ -44,22 +45,23 @@ void UtPod::sortSongList(){
 }
 
 void UtPod::clearMemory(){ 
-    SongNode *p = songs;  
-    while (songs != 0){ 
-        p = songs; 
-        songs = songs->next; 
-        free(p); 
-    }
+    // SongNode *p = songs;  
+    // while (songs != 0){ 
+    //     p = songs; 
+    //     songs = songs->next; 
+    //     free(p); 
+    // }
 }
 
 int UtPod::getRemainingMemory(){  //Amit Changed the input parameter for this function
-    int currentTotal = 0; 
-    while (songs != NULL){ 
-        currentTotal = currentTotal + songs->s.getSize; 
-        songs = songs->next; 
-    }
-    int remainingMem = memSize - currentTotal; 
-    return (currentTotal); 
+    // int currentTotal = 0; 
+    // while (songs != NULL){ 
+    //     currentTotal = currentTotal + songs->s.getSize(); 
+    //     songs = songs->next; 
+    // }
+    // int remainingMem = memSize - currentTotal; 
+    // return (currentTotal); 
+    return 0; 
 }
 
 UtPod::~UtPod(){

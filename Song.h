@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 
+using namespace std; 
 
 class Song{ 
 
@@ -19,13 +20,13 @@ class Song{
         Song(string artist, string songName, int size); 
 
         string getArtistName(); 
-        void setArtistName(string n); 
+        void setArtistName(string artist); 
 
         string getSongName(); 
-        void setSongName(string q); 
+        void setSongName(string songName); 
 
         int getSize(); 
-        void setSize(int p); 
+        void setSize(int size); 
 
         ~Song(); 
 }; 
