@@ -12,8 +12,6 @@ Song::Song()
 
 Song::Song(string artist) {
     this->artist = artist; 
-    songName = ""; 
-    size = 42; 
 }
 
 Song::Song(string artist, string songName, int size) {
@@ -48,6 +46,32 @@ void Song::setSize(int num){
     size = num; 
 }
 
-Song::~Song(){ 
-    //Code for Destructor * FREE SONG OBJECTS *
+void Song::swap(Song &song)
+{
+    Song temp = song;
+    song = *this;
+    *this = temp;
+}
+
+bool Song::operator >(Song const &rhs)
+{
+    return (size > rhs.size);
+}
+
+bool Song::operator ==(Song const &rhs)
+{
+    return (artist == rhs.artist &&
+            songName == rhs.songName &&
+            size == rhs.size);
+}
+
+Song::~Song()
+{
+    cout << "debug - in destructor for "<< artist <<endl;
+}
+
+ostream& operator << (ostream& out, Song &s)
+{
+    out << s.getArtistName() << " " << s.getSongName() << " - " << s.getSize();
+    return out;
 }
