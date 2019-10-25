@@ -15,7 +15,7 @@ int main() {
     cout << s2 << endl;
 
     Song s3("AMIT");
-
+    s3.swap(s);
     cout << s3 << endl;
 
     if (s > s2)
