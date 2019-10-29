@@ -19,13 +19,13 @@ class Song{
         Song(string artist); 
         Song(string artist, string songName, int size); 
 
-        string getArtistName(); 
+        string getArtistName() const; 
         void setArtistName(string n); 
 
-        string getSongName(); 
+        string getSongName() const; 
         void setSongName(string q); 
 
-        int getSize(); 
+        int getSize() const; 
         void setSize(int p);
         void swap(Song &song);
         bool operator >(Song const &rhs);
