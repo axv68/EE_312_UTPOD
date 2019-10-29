@@ -1,5 +1,9 @@
 #include "UTPod.h"
 #include "Song.h"
+#include <fstream>
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
 
 using namespace std; 
 
@@ -36,7 +40,16 @@ int UtPod::removeSong(Song const &s){
 }
 
 void UtPod::shuffle(){ 
+       
+   unsigned int currentTime =  (unsigned)time(0);
 
+   srand(currentTime);  //seed the random number generator
+
+   for (int i = 0; i < numSongs; i++) {
+      long song1 = (rand() % numSongs) + 1;
+      //logic with Song nodes
+   }
+    //Do some logic
 
 }
 
@@ -45,22 +58,22 @@ void UtPod::sortSongList(){
 }
 
 void UtPod::clearMemory(){ 
-    // SongNode *p = songs;  
-    // while (songs != 0){ 
-    //     p = songs; 
-    //     songs = songs->next; 
-    //     free(p); 
-    // }
+    SongNode *p = songs;  
+    while (songs != 0){ 
+        p = songs; 
+        songs = songs->next; 
+        free(p); 
+    }
 }
 
 int UtPod::getRemainingMemory(){  //Amit Changed the input parameter for this function
-    // int currentTotal = 0; 
-    // while (songs != NULL){ 
-    //     currentTotal = currentTotal + songs->s.getSize(); 
-    //     songs = songs->next; 
-    // }
-    // int remainingMem = memSize - currentTotal; 
-    // return (currentTotal); 
+    int currentTotal = 0; 
+    while (songs != NULL){ 
+        currentTotal = currentTotal + songs->s.getSize(); 
+        songs = songs->next; 
+    }
+    int remainingMem = memSize - currentTotal; 
+    return (currentTotal); 
     return 0; 
 }
 

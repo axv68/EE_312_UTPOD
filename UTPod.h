@@ -23,6 +23,8 @@ class UtPod
       SongNode *songs;  //the head pointer
       
       int memSize;
+
+      int numSongs; 
    
    public:
       //Default constructor

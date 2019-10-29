@@ -2,14 +2,16 @@
 #include <fstream>
 #include "Song.h"
 
+using namespace std; 
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    // cout << "Hello, World!" << endl;
 
     Song s;
     s.setArtistName("ACDC");
     s.setSize(31);
     s.setSongName("Shoot to Thrill");
-    cout << s.getArtistName() << s.getSize() << s.getSongName() << endl;
+    cout << s << endl;
 
     Song s2("Journey", "Dont Stop Believing", 21);
     cout << s2 << endl;
