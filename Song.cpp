@@ -72,6 +72,6 @@ Song::~Song()
 
 ostream& operator << (ostream& out, Song &s)
 {
-    out << s.getArtistName() << " " << s.getSongName() << " - " << s.getSize();
+    out << s.getArtistName() << " - " << s.getSongName() << " - " << s.getSize();
     return out;
 }
