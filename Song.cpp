@@ -22,7 +22,7 @@ Song::Song(string artist, string songName, int size) {
 
 //Public Functions
 
-string Song::getArtistName(){ 
+string Song::getArtistName() const{ 
     return artist; 
 }
 
@@ -30,7 +30,7 @@ void Song::setArtistName(string name){
     artist = name; 
 }
 
-string Song::getSongName(){ 
+string Song::getSongName() const{ 
     return songName; 
 }
 
@@ -38,7 +38,7 @@ void Song::setSongName(string song){
     songName = song; 
 }
 
-int Song::getSize(){ 
+int Song::getSize() const{ 
     return size; 
 }
 
