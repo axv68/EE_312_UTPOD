@@ -15,6 +15,7 @@ You will want to do more complete testing.
 #include "UTPod.h"
 
 using namespace std;
+//  !!! !!! !!! !!! !!! !!! !!! !!! !!! module load gcc
 //int argc, char *argv[]
 int main()
 {
@@ -42,6 +43,10 @@ int main()
     result = t.addSong(s5);
 
     t.sortSongList();
+    t.showSongList();
+    cout << endl;
+
+    t.shuffle();
     t.showSongList();
     cout << endl;
     

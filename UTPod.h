@@ -135,6 +135,7 @@ class UtPod
 
       int getRemainingMemory();
 
+      int countSongs();
 
       ~UtPod();
  

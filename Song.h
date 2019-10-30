@@ -31,9 +31,6 @@ class Song{
         bool operator >(Song const &rhs);
         bool operator ==(Song const &rhs);
 
-
-
-    ~Song();
 };
 
 ostream& operator << (ostream& out, Song const &s);

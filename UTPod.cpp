@@ -76,6 +76,26 @@ int UtPod::removeSong(Song const &s){
 }
 
 void UtPod::shuffle(){
+    int numSongs = countSongs();
+    SongNode *temp1 = songs;
+    SongNode *temp2 = songs;
+    if(numSongs <= 1){
+        return;
+    }
+    else{
+        for(int i = 0; i < 2*numSongs; i++){
+            int shufflePosition1 = rand() % numSongs;
+            int shufflePosition2 = rand() % numSongs;
+            for(int j = 0; j < shufflePosition1; j++){
+                temp1 = temp1->next;
+            }
+            for(int k = 0; k < shufflePosition2; k++){
+                temp2 = temp2->next;
+            }
+            temp2->s.swap(temp1->s);
+            temp1 = temp2 = songs;
+        }
+    }
 
 }
 
@@ -123,6 +143,15 @@ void UtPod::showSongList(){
     }
 }
 
+int UtPod::countSongs(){
+    SongNode *temp = songs;
+    int numSongs = 0;
+    while(temp != NULL){
+        numSongs++;
+        temp = temp->next;
+    }
+    return numSongs;
+}
 UtPod::~UtPod(){
     clearMemory();
 
