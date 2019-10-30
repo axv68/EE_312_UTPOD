@@ -12,47 +12,47 @@ You will want to do more complete testing.
 #include <cstdlib>
 #include <iostream>
 #include "Song.h"
-#include "UTPod.h"
+#include "UtPod.h"
 
 using namespace std;
-
-int main(int argc, char *argv[])
+//int argc, char *argv[]
+int main()
 {
     UtPod t;
     
-    Song s1("Beatles", "Hey Jude1", 4);
+    Song s1("Beatles", "Hey Jude", 4);
     int result = t.addSong(s1);
-    cout << "result = " << result << endl;
     
     t.showSongList();
+    cout << endl;
           
-    Song s2("Beatles", "Hey Jude2", 5);
+    Song s2("Beatles", "Hey Jude", 5);
     result = t.addSong(s2);
-    cout << "result = " << result << endl;
     
     t.showSongList();
-       
-    Song s3("Beatles", "Hey Jude3", 6);
+    cout << endl;
+
+    Song s3("Journey", "Dont Stop Believing", 21);
     result = t.addSong(s3);
-    cout << "result = " << result << endl;
        
-    Song s4("Beatles", "Hey Jude4", 7);
+    Song s4("ACDC", "Shoot to Thrill", 47);
     result = t.addSong(s4);
-    cout << "result = " << result << endl;
        
-    Song s5("Beatles", "Hey Jude5", 241);
+    Song s5("Queen", "Bohemian Rhapsody", 200);
     result = t.addSong(s5);
-    cout << "add result = " << result << endl;
-    
+
+    t.sortSongList();
     t.showSongList();
+    cout << endl;
     
     result = t.removeSong(s2);
-    cout << "delete result = " << result << endl;
-  
-    result = t.removeSong(s3);
-    cout << "delete result = " << result << endl;
 
     t.showSongList();
+    cout << endl << "above shows removed Hey Jude 5" << endl << "remaining memory " << t.getRemainingMemory() << endl << endl;
+
+    result = t.removeSong(s3);
+    t.showSongList();
+    cout << endl;
     
     result = t.removeSong(s1);
     cout << "delete result = " << result << endl;
@@ -72,5 +72,5 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << "memory = " << t.getRemainingMemory() << endl;
     
-
+return 0;
 }

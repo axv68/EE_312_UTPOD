@@ -19,13 +19,13 @@ class Song{
         Song(string artist); 
         Song(string artist, string songName, int size); 
 
-        string getArtistName() const; 
+        string getArtistName() const;
         void setArtistName(string n); 
 
-        string getSongName() const; 
+        string getSongName() const;
         void setSongName(string q); 
 
-        int getSize() const; 
+        int getSize() const;
         void setSize(int p);
         void swap(Song &song);
         bool operator >(Song const &rhs);
@@ -36,7 +36,7 @@ class Song{
     ~Song();
 };
 
-ostream& operator << (ostream& out, Song &s);
+ostream& operator << (ostream& out, Song const &s);
 
 #endif
 

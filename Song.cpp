@@ -2,18 +2,13 @@
 
 using namespace std; 
 
-// Default Functions for when Object is created
-Song::Song() 
-{ 
-    artist = ""; 
-    songName = ""; 
-    size = 42; //This is the default size unless specified otherwise 
+// Constructor
+Song::Song()
+{
+    artist = "";
+    songName = "";
+    size = 42; //This is the default size unless specified otherwise
 }
-
-Song::Song(string artist) {
-    this->artist = artist; 
-}
-
 Song::Song(string artist, string songName, int size) {
     this->artist = artist; 
     this->songName = songName; 
@@ -22,7 +17,7 @@ Song::Song(string artist, string songName, int size) {
 
 //Public Functions
 
-string Song::getArtistName() const{ 
+string Song::getArtistName() const{
     return artist; 
 }
 
@@ -30,7 +25,7 @@ void Song::setArtistName(string name){
     artist = name; 
 }
 
-string Song::getSongName() const{ 
+string Song::getSongName() const{
     return songName; 
 }
 
@@ -38,7 +33,7 @@ void Song::setSongName(string song){
     songName = song; 
 }
 
-int Song::getSize() const{ 
+int Song::getSize() const{
     return size; 
 }
 
@@ -55,7 +50,13 @@ void Song::swap(Song &song)
 
 bool Song::operator >(Song const &rhs)
 {
-    return (size > rhs.size);
+    if(artist == rhs.artist){
+        if(songName == rhs.songName){
+            return (size > rhs.size);
+            }
+        return(songName > rhs.songName);
+        }
+    return(artist > rhs.artist);
 }
 
 bool Song::operator ==(Song const &rhs)
@@ -70,8 +71,8 @@ Song::~Song()
     cout << "debug - in destructor for "<< artist <<endl;
 }
 
-ostream& operator << (ostream& out, Song &s)
+ostream& operator << (ostream& out, Song const &s)
 {
-    out << s.getArtistName() << " - " << s.getSongName() << " - " << s.getSize();
+    out << s.getArtistName() << " " << s.getSongName() << " - " << s.getSize();
     return out;
 }

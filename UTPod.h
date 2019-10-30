@@ -20,11 +20,9 @@ class UtPod
          SongNode *next;
       };
       
-      SongNode *songs;  //the head pointer
-      
+      SongNode *songs = NULL;  //the head pointer
+      SongNode *tail = NULL;
       int memSize;
-
-      int numSongs; 
    
    public:
       //Default constructor
@@ -130,7 +128,7 @@ class UtPod
       /* FUNCTION - int getRemainingMemory
        *  returns the amount of memory available for adding new songs
 
-         input parms - SongNode *songs
+         input parms -
 
          output parms -
       */
