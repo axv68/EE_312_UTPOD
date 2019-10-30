@@ -28,7 +28,9 @@ int main()
     cout << endl;
           
     Song s2("Beatles", "Hey Jude", 5);
+    Song s6("Beatles", "Hey Jude", 5);
     result = t.addSong(s2);
+    result = t.addSong(s6);
     
     t.showSongList();
     cout << endl;
@@ -46,12 +48,14 @@ int main()
     t.showSongList();
     cout << endl;
 
+    cout << "\nShuffling The Song List" <<endl;
     t.shuffle();
     t.showSongList();
     cout << endl;
     
     result = t.removeSong(s2);
 
+    cout << "\nNew Song List" <<endl;
     t.showSongList();
     cout << endl << "above shows removed Hey Jude 5" << endl << "remaining memory " << t.getRemainingMemory() << endl << endl;
 
