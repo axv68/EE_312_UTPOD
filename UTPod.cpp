@@ -59,6 +59,7 @@ int UtPod::removeSong(Song const &s){
     //Else return -2, which means that no song was removed
 
     //s holds the artist, song, and size;
+    
 
     SongNode *temp2 = songs;            // trailing pointer
     SongNode *temp1 = temp2->next;     // leading pointer
@@ -120,7 +121,7 @@ void UtPod::clearMemory(){
     while (songs != NULL){
         p = songs;
         songs = songs->next;
-        free(p);
+        delete(p);
     }
 }
 

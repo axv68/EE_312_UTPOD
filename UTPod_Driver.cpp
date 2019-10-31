@@ -15,7 +15,7 @@ You will want to do more complete testing.
 #include "UTPod.h"
 
 using namespace std;
-//  !!! !!! !!! !!! !!! !!! !!! !!! !!! module load gcc
+//  !!! !!! !!! !!! IN KAMEK !!! !!! !!! !!! module load gcc
 //int argc, char *argv[]
 int main()
 {
