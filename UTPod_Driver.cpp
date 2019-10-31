@@ -15,7 +15,7 @@ You will want to do more complete testing.
 #include "UTPod.h"
 
 using namespace std;
-//  !!! !!! !!! !!! IN KAMEK !!! !!! !!! !!! module load gcc
+//  !!! !!! !!! !!! !!! !!! !!! !!! !!! module load gcc
 //int argc, char *argv[]
 int main()
 {
@@ -31,7 +31,17 @@ int main()
     Song s6("Beatles", "Hey Jude", 5);
     result = t.addSong(s2);
     result = t.addSong(s6);
-    
+    t.showSongList();
+    cout << endl;
+
+    t.removeSong(s6);   // this code tests deleting the tail pointer and adding a song afterwards
+    t.showSongList();
+    cout << endl;
+    t.addSong(s2);
+    t.showSongList();
+    cout << endl;
+
+
     t.showSongList();
     cout << endl;
 
@@ -47,7 +57,17 @@ int main()
     t.sortSongList();
     t.showSongList();
     cout << endl;
+    t.removeSong(s4);
+    t.showSongList();
+    cout << endl;
 
+    t.addSong(s4);
+    t.showSongList();
+    cout << endl;
+
+    Song s7("Queen", "Bohemian Rhapsody", 300);
+    result = t.addSong(s7);
+    cout << result << endl;
     cout << "\nShuffling The Song List" <<endl;
     t.shuffle();
     t.showSongList();
