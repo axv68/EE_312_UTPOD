@@ -28,19 +28,6 @@ int main()
     Song s2("Beatles", "Hey Dude", 5);
     result = t.addSong(s2);
 
-    t.showSongList();
-    cout << endl;
-
-    t.showSongList();
-    cout << endl;
-    t.addSong(s2);
-    t.showSongList();
-    cout << endl;
-
-
-    t.showSongList();
-    cout << endl;
-
     Song s3("Journey", "Dont Stop Believing", 21);
     result = t.addSong(s3);
        
@@ -52,7 +39,7 @@ int main()
 
 
     if (result == -1){ 
-        cout << "Cannot Add Requested Song: " << s5 << endl; 
+        cout << endl << "Cannot Add Requested Song: " << s5 << endl; 
         cout << endl; 
     }
 
@@ -67,38 +54,21 @@ int main()
     cout << "Sorted Song List: " << endl << endl; 
     t.sortSongList();
     t.showSongList(); 
-    // cout << "\nShuffling The Song List" <<endl;
-    // t.shuffle();
-    // t.showSongList();
-    // cout << endl;
-    
-    // result = t.removeSong(s2);
 
-    // cout << "\nNew Song List" <<endl;
-    // t.showSongList();
-    // cout << endl << "above shows removed Hey Jude 5" << endl << "remaining memory " << t.getRemainingMemory() << endl << endl;
+    cout << endl << "Shuffled Song List: " << endl << endl; 
+    t.shuffle(); 
+    t.showSongList(); 
 
-    // result = t.removeSong(s3);
-    // t.showSongList();
-    // cout << endl;
-    
-    // result = t.removeSong(s1);
-    // cout << "delete result = " << result << endl;
- 
-    // result = t.removeSong(s5);
-    // cout << "delete result = " << result << endl;
-    
-    // result = t.removeSong(s4);
-    // cout << "delete result = " << result << endl;
-    
-    
-    // t.showSongList();
-    
-    // result = t.addSong(s5);
-    // cout << "add result = " << result << endl;
-    
-    // t.showSongList();
-    // cout << "memory = " << t.getRemainingMemory() << endl;
+    result = t.removeSong(s6); 
+    result = t.removeSong(s4); 
+    result = t.removeSong(s3); 
+    cout << endl; 
+
+    cout << "New Song List:" << endl << endl; 
+
+    t.showSongList(); 
+
+    cout <<endl << "Remaining Memory is: " << t.getRemainingMemory() << "MB" << endl; 
     
 return 0;
 }
