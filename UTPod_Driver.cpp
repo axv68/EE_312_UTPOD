@@ -15,7 +15,7 @@ You will want to do more complete testing.
 #include "UTPod.h"
 
 using namespace std;
-//  !!! !!! !!! !!! IN KAMEK !!! !!! !!! !!! module load gcc
+//  !!! !!! !!! !!! !!! !!! !!! !!! !!! module load gcc
 //int argc, char *argv[]
 
 int main()
@@ -28,6 +28,19 @@ int main()
     Song s2("Beatles", "Hey Dude", 5);
     result = t.addSong(s2);
 
+    t.showSongList();
+    cout << endl;
+
+    t.showSongList();
+    cout << endl;
+    t.addSong(s2);
+    t.showSongList();
+    cout << endl;
+
+
+    t.showSongList();
+    cout << endl;
+
     Song s3("Journey", "Dont Stop Believing", 21);
     result = t.addSong(s3);
        
@@ -36,6 +49,7 @@ int main()
        
     Song s5("Queen", "Bohemian Rhapsody", 200);
     result = t.addSong(s5);
+
 
     if (result == -1){ 
         cout << "Cannot Add Requested Song: " << s5 << endl; 
@@ -46,6 +60,7 @@ int main()
     result = t.addSong(s6); 
 
     cout << "Current Song List: " << endl << endl; 
+
     t.showSongList();
     cout << endl;
 

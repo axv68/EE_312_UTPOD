@@ -59,7 +59,6 @@ int UtPod::removeSong(Song const &s){
     //Else return -2, which means that no song was removed
 
     //s holds the artist, song, and size;
-    
 
     SongNode *temp2 = songs;            // trailing pointer
     SongNode *temp1 = temp2->next;     // leading pointer
@@ -73,8 +72,11 @@ int UtPod::removeSong(Song const &s){
     while(temp1 != NULL){
         if (temp1->s == s){                // found desired song to delete
             temp2->next = temp1->next;      // make the list skip over the song;
+            if(temp1 == tail){
+                tail = temp2;               // if the last node is to be deleted, move the tail pointer up before deleting.
+            }
             delete(temp1);                  // get rid of song
-            return 0;
+            return SUCCESS;
         }
         temp1 = temp1->next;
         temp2 = temp2->next;
