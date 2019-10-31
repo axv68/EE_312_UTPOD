@@ -31,7 +31,7 @@ int UtPod::addSong(Song const &s){
     //If 0 then.....
     int remMem = getRemainingMemory();
     if (remMem < s.getSize()){
-        return -1; //not enough memory
+        return NO_MEMORY; //not enough memory
     }
     if(remMem == memSize){
         SongNode * temp = new SongNode;
@@ -46,7 +46,7 @@ int UtPod::addSong(Song const &s){
     temp->next = NULL;
     tail->next = temp;
     tail = tail->next;
-    return 0;
+    return SUCCESS;
 
     //dynamically allocate memory for a new song and add it to the end of a linked list
 }
@@ -63,6 +63,13 @@ int UtPod::removeSong(Song const &s){
 
     SongNode *temp2 = songs;            // trailing pointer
     SongNode *temp1 = temp2->next;     // leading pointer
+
+    if(songs->s == s){                  // check if head of list is song desired to remove
+        songs = temp1;
+        delete(temp2);
+        return SUCCESS;
+    }
+
     while(temp1 != NULL){
         if (temp1->s == s){                // found desired song to delete
             temp2->next = temp1->next;      // make the list skip over the song;
@@ -73,7 +80,7 @@ int UtPod::removeSong(Song const &s){
         temp2 = temp2->next;
     }
 
-    return -2; //unsucessful
+    return NOT_FOUND; //unsucessful
 }
 
 void UtPod::shuffle(){

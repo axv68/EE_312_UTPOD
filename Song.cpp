@@ -68,6 +68,6 @@ bool Song::operator ==(Song const &rhs)
 
 ostream& operator << (ostream& out, Song const &s)
 {
-    out << s.getArtistName() << " " << s.getSongName() << " - " << s.getSize();
+    out << s.getArtistName() << " : " << s.getSongName() << " - " << s.getSize();
     return out;
 }
