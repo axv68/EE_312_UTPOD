@@ -147,6 +147,10 @@ int UtPod::getRemainingMemory(){  // DONT LOOSE YOUR HEAD AMIT!!!!!
 
 void UtPod::showSongList(){
     SongNode *temp = songs;
+    if (temp == NULL){ 
+        cout << endl << "No Songs In UTPod" << endl; 
+        return; 
+    }
     while(temp != NULL){
         cout << temp->s << endl;
         temp = temp->next;

@@ -62,6 +62,10 @@ int main()
     result = t.removeSong(s6); 
     result = t.removeSong(s4); 
     result = t.removeSong(s3); 
+    result = t.removeSong(s5); 
+    if (result == -2) { 
+        cout << endl << "Could Not Remove The Following Song: " << s5 << endl; 
+    }
     cout << endl; 
 
     cout << "New Song List:" << endl << endl; 
@@ -69,6 +73,11 @@ int main()
     t.showSongList(); 
 
     cout <<endl << "Remaining Memory is: " << t.getRemainingMemory() << "MB" << endl; 
+
+    t.clearMemory(); 
+    cout <<endl << "Remaining Memory is: " << t.getRemainingMemory() << "MB" << endl; 
+
+    t.showSongList(); 
     
 return 0;
 }
