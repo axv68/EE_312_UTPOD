@@ -60,6 +60,10 @@ int main(){
     cout <<endl << "Shuffled Song List:" << endl; 
     f.showSongList(); 
 
+    f.shuffle(); 
+    cout <<endl << "Shuffled Song List 2:" << endl; 
+    f.showSongList(); 
+
     f.sortSongList(); 
     cout <<endl << "Sorted Song List:" << endl; 
     f.showSongList(); 
@@ -70,6 +74,11 @@ int main(){
     cout <<endl << "New Song List:" << endl; 
     f.showSongList();
 
+    cout <<endl << "Remaining Memory is: " << f.getRemainingMemory() << "MB" << endl; 
+
+    f.clearMemory(); 
+    cout <<endl << "Remaining Memory is: " << f.getRemainingMemory() << "MB" << endl; 
+    f.showSongList(); 
 
     return 0; 
 }
