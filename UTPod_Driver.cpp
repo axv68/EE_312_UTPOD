@@ -13,12 +13,68 @@ You will want to do more complete testing.
 #include <iostream>
 #include "Song.h"
 #include "UTPod.h"
+#include <fstream>
 
 using namespace std;
 //  !!! !!! !!! !!! !!! !!! !!! !!! !!! module load gcc
 //int argc, char *argv[]
 
-int main()
+int main(){ 
+
+    string line; 
+    ifstream myfile("test.txt"); 
+    int i= 0; 
+    int j = 0; 
+    UtPod f; 
+    Song u, u1, u2, u3, u4, u5, u6; 
+    cout << endl; 
+    if (myfile.is_open()){ 
+        while (getline(myfile,line)){
+            if (i % 3 == 2){ 
+                int q = stoi(line);
+                u.setSize(q);  
+                int result = f.addSong(u);
+                if (result == -1){ 
+                    cout << endl << "Cannot Add Requested Song: " << u << endl;
+                    cout << endl; 
+                }
+                //cout<< q <<endl; 
+            }
+            if (i % 3 == 1){ 
+                u.setSongName(line); 
+            }
+            else {
+                u.setArtistName(line); 
+            }  
+            i++; 
+        }
+        myfile.close(); 
+    }   
+    cout <<endl << "Current Song List:" << endl; 
+
+    f.showSongList(); 
+
+    cout <<endl << "Remaining Memory is: " << f.getRemainingMemory() << "MB" << endl; 
+    
+    f.shuffle(); 
+    cout <<endl << "Shuffled Song List:" << endl; 
+    f.showSongList(); 
+
+    f.sortSongList(); 
+    cout <<endl << "Sorted Song List:" << endl; 
+    f.showSongList(); 
+
+    Song y("Big Daddy Chris","I Got Two Cats", 88); 
+    f.removeSong(y); 
+    cout <<endl << "Removing The Song >> " << y <<  endl; 
+    cout <<endl << "New Song List:" << endl; 
+    f.showSongList();
+
+
+    return 0; 
+}
+
+int main2()
 {
     UtPod t(250);
     
@@ -78,9 +134,16 @@ int main()
     cout <<endl << "Remaining Memory is: " << t.getRemainingMemory() << "MB" << endl; 
 
     t.showSongList(); 
+
+    UtPod q(600); 
+    cout <<endl << "Q Remaining Memory is: " << q.getRemainingMemory() << "MB" << endl; 
+
+    UtPod r(-340); 
+    cout <<endl << "R Remaining Memory is: " << r.getRemainingMemory() << "MB" << endl;
     
 return 0;
 }
+
 
 // int main()
 // {
