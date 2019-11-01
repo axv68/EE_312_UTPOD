@@ -14,6 +14,7 @@ You will want to do more complete testing.
 #include "Song.h"
 #include "UTPod.h"
 #include <fstream>
+#include <string>
 
 using namespace std;
 //  !!! !!! !!! !!! !!! !!! !!! !!! !!! module load gcc
