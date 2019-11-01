@@ -20,7 +20,7 @@ using namespace std;
 //  !!! !!! !!! !!! !!! !!! !!! !!! !!! module load gcc
 //int argc, char *argv[]
 
-int main(){ 
+int main2(){ 
 
     string line; 
     ifstream myfile("test.txt"); 
@@ -84,7 +84,7 @@ int main(){
     return 0; 
 }
 
-int main2()
+int main()
 {
     UtPod t(250);
     
